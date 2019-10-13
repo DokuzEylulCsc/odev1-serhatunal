@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SERHAT ÜNAL-2017280054</title>
+    </head>
+    <body>
+        <h1>SERHAT ÜNAL-2017280054</h1>
+        <h2>Güz Döneminin ilk ödevi</h2>
+        
+        <label for="id1">Metin kutusu 1</label>
+        <input type="text" id="id1" onkeypress="return check(event, 'id1')">
+        <br>
+
+        <label for="id2">Metin kutusu 2</label>
+        <input type="text" id="id2" onkeypress="return check(event, 'id2')">
+        <br><br>
+
+        <button type="button" id="button1" onclick="sum()">Topla</button>
+        <br><br>
+
+        <label for="id3">Metin kutusu 3</label>
+        <input type="text" id="id3">
+        <br>
+
+        <label for="id4">Metin kutusu 4</label>
+        <input type="text" id="id4">
+        <br><br>
+
+        <button type="button" onclick="combine()">Yapıştır</button>
+
+        <script>
+            function sum() {
+                const num1 = document.getElementById("id1").value;
+                const num2 = document.getElementById("id2").value;
+                let result = parseInt(num1) + parseInt(num2);
+                alert(result);
+            }
+
+            function check(event, idName) {
+                if (event.keyCode != 8 && event.keyCode != 0 && (event.keyCode < 48 || event.keyCode > 57)) {
+                    return false;
+                }
+
+                const tempId = document.getElementById(idName);
+                temp.setAttribute("onsubmit", true);
+                return true;
+            }
+
+            function combine() {
+                const word1 = document.getElementById("id3").value;
+                const word2 = document.getElementById("id4").value;
+                let result = word1 + word2;
+                alert(result);
+            }
+        </script>
+    </body>
+</html>
